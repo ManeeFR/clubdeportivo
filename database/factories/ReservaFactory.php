@@ -21,9 +21,8 @@ class ReservaFactory extends Factory {
      */
     public function definition() {
         return [
-            'name_user' => $this->faker->name(),
-            'email_user' => $this->faker->unique()->safeEmail(),
-            'id_pista' => rand(1, 20),
+            'id_user' => $this->faker->unique()->safeEmail(),
+            'num_pista' => rand(1, 6),
             'categoria' => $this->faker->randomElement(['Cubierta', 'Descubierta'])
         ];
     }

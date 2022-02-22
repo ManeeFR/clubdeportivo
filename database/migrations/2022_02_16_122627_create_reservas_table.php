@@ -15,20 +15,25 @@ class CreateReservasTable extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users');
-
-            $table->unsigned('name_user');
-            $table->foreign('name_user')->references('name')->on('users');
-
-            $table->string('email_user');
-
-            $table->integer('id_pista');
-
+            $table->string('id_user');
+            $table->string('num_pista');
             $table->string('categoria');
-
             $table->timestamps();
+            // $table->increments('id');
+
+            // $table->unsignedInteger('id_user');
+            // // $table->foreign('id_user')->references('id')->on('users');
+
+            // $table->unsigned('name_user');
+            // // $table->foreign('name_user')->references('name')->on('users');
+
+            // $table->string('email_user');
+
+            // $table->integer('id_pista');
+
+            // $table->string('categoria');
+
+            // $table->timestamps();
         });
     }
 

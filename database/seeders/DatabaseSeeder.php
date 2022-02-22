@@ -9,7 +9,7 @@ use App\Models\User;
 
 class DatabaseSeeder extends Seeder {
     public function run() {
-        Reserva::factory(75)->create();
+        Reserva::factory(100)->create();
         User::factory(50)->create();
     }
 }
