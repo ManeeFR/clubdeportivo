@@ -9,7 +9,7 @@ class ReservaController extends Controller
 {
 
     public function index() {
-        $cursos = Reserva::paginate();
+        $reservas = Reserva::paginate();
         return view('reservas.index', compact('reservas'));
     }
 
