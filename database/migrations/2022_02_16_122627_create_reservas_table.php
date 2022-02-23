@@ -15,9 +15,11 @@ class CreateReservasTable extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_user');
-            $table->string('num_pista');
-            $table->string('categoria');
+            $table->string('email_user');
+            // $table->string('email_user');
+            // $table->foreign('email_user')->references('email')->on('users');
+            $table->unsignedBigInteger('num_pista');
+            $table->foreign('num_pista')->references('num_pista')->on('pistas');
             $table->timestamps();
             // $table->increments('id');
 
@@ -25,7 +27,6 @@ class CreateReservasTable extends Migration
             // // $table->foreign('id_user')->references('id')->on('users');
 
             // $table->unsigned('name_user');
-            // // $table->foreign('name_user')->references('name')->on('users');
 
             // $table->string('email_user');
 

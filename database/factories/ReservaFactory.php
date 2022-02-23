@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Reserva;
+use App\Models\Pista;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -21,9 +22,8 @@ class ReservaFactory extends Factory {
      */
     public function definition() {
         return [
-            'id_user' => $this->faker->unique()->safeEmail(),
-            'num_pista' => rand(1, 6),
-            'categoria' => $this->faker->randomElement(['Cubierta', 'Descubierta'])
+            'email_user' => $this->faker->unique()->safeEmail(),
+            'num_pista' => Pista::all()->random()->num_pista
         ];
     }
 }
