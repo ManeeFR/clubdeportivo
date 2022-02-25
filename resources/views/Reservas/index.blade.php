@@ -8,7 +8,7 @@
 <ul>
     @foreach ($reservas as $reserva)
         <li>
-            <a href="{{route('reservas.show', $reserva->id)}}">Reserva en la pista nº {{$reserva->num_pista}}</a>
+            <a href="{{route('reservas.show', $reserva->id_pista)}}">Reserva en la pista nº {{$reserva->id_pista}}</a>
         </li>
     @endforeach
 </ul>

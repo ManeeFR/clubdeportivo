@@ -3,20 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Reserva;
 use App\Models\Pista;
 
-class ReservaController extends Controller
+class PistaController extends Controller
 {
-
     public function index() {
-        $reservas = Reserva::paginate();
-        return view('reservas.index', compact('reservas'));
-    }
-
-    public function create() {
         $pistas = Pista::all();
-        return view('reservas.create', compact('pistas'));
+        return view('pistas.index', compact('pistas'));
     }
 
     public function show($id) {
