@@ -17,7 +17,9 @@ class CreateReservasTable extends Migration
             $table->increments('id');
             $table->string('email_user');
             $table->integer('id_pista');
+            $table->string('franja');
             $table->timestamps();
+
 
 
 

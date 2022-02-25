@@ -10,8 +10,8 @@ use App\Models\Pista;
 
 class DatabaseSeeder extends Seeder {
     public function run() {
-        Reserva::factory(100)->create();
-        User::factory(50)->create();
+        Reserva::factory(60)->create();
+        User::factory(25)->create();
         Pista::factory(6)->create();
     }
 }

@@ -23,7 +23,8 @@ class ReservaFactory extends Factory {
     public function definition() {
         return [
             'email_user' => $this->faker->unique()->safeEmail(),
-            'id_pista'  => $this->faker->numberBetween(1, 6)
+            'id_pista'  => $this->faker->numberBetween(1, 6),
+            'franja' => $this->faker->randomElement(['9:00 - 10:30', '10:30 - 12:00', '12:00 - 13:30', '16:00 - 17:30', '17:30 - 19:00', '19:00 - 20:30'])
         ];
     }
 }
