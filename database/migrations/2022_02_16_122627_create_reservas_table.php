@@ -22,6 +22,12 @@ class CreateReservasTable extends Migration
             $table->foreign('num_pista')->references('num_pista')->on('pistas');
             $table->timestamps();
             // $table->increments('id');
+            //JAVIERROMAN HUELE A TUCÁN
+            //JAVIERROMAN HUELE A TUCÁN
+            //JAVIERROMAN HUELE A TUCÁN
+            //JAVIERROMAN HUELE A TUCÁN
+            //JAVIERROMAN HUELE A TUCÁN
+            //JAVIERROMAN HUELE A TUCÁN
 
             // $table->unsignedInteger('id_user');
             // // $table->foreign('id_user')->references('id')->on('users');
