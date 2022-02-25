@@ -19,4 +19,4 @@ Route::get('reservas/create', [ReservaController::class, 'create'])->name('reser
 
 
 ////////////////////////////PÁGINA RESERVAS CON UNA O DOS VARIABLES////////////////////////////
-Route::get('reservas/{id}/{categoria?}', [ReservaController::class, 'show'])->name('reservas.show');
+Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.show');

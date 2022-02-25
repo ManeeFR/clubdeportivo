@@ -17,8 +17,8 @@ class ReservaController extends Controller
         return view('reservas.create');
     }
 
-    public function show($id, $categoria = null) {
-        $curso = Reserva::find($id);
-        return view('reservas.show', compact('reserva', 'categoria'));
+    public function show($id) {
+        $reservas = Reserva::find($id);
+        return view('reservas.show', compact('reservas'));
     }
 }
