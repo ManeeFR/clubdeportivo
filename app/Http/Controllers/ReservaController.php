@@ -23,4 +23,18 @@ class ReservaController extends Controller
         $pistas = Pista::find($id);
         return view('pistas.show', compact('pistas'));
     }
+
+    // Encargado de almacenar en la BD
+    public function store(Request $request, $id_pista) {
+
+        $reserva = new Reserva();
+        $reserva->email_user = $request->email_user;
+        $reserva->id_pista = $id_pista;
+        $reserva->franja = $request->franja;
+
+        $reserva->save();
+
+        return redirect()->route('reservas.show', $id_pista); // aquí debería poner $reserva->id() pero Laravel es mu listo
+
+    }
 }

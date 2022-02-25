@@ -18,5 +18,9 @@ Route::get('reservas', [ReservaController::class, 'index'])->name('reservas.inde
 Route::get('reservas/create', [ReservaController::class, 'create'])->name('reservas.create');
 
 
+//////////////////PÁGINA STORE, PARA ALMACENAR EN LA BD//////////////
+Route::post('reservas/store/{id}', [ReservaController::class, 'store'])->name('reservas.store');
+
+
 ////////////////////////////PÁGINA RESERVAS CON UNA O DOS VARIABLES////////////////////////////
 Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.show');
