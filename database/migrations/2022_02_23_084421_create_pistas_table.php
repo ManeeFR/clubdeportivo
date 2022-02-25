@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pistas', function (Blueprint $table) {
-            $table->bigInteger('num_pista');
+            $table->id('num_pista');
             $table->enum('categoria', ['Cubierta', 'Descubierta']);
             $table->timestamps();
         });
