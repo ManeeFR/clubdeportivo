@@ -25,35 +25,34 @@ class ReservaController extends Controller
     public function show($id)
     {
         $pistas = Pista::find($id);
-        return view('pistas.show', compact('pistas'));
+        $fecha = getdate();
+        return view('pistas.show', compact('pistas', 'fecha'));
     }
 
     // Encargado de almacenar en la BD
-    public function store(Request $request, $id_pista, $franja)
+    public function store(Request $request, $id_pista)
     {
-        // JAVI dice : He modificado esta función para intentar que compruebe si esta libre la reserva pero sin éxito.
-        //             Estaba intendo crear una consulta que devolviera solo el registro con la id_pista y franja seleccionada,
-        //             pero no se como meter la franja en la consulta.
-        //             Cuando ejecutes el proyecto te va a petar a la hora de seleccionar pista pero porque,
-        //             no está bien recogida la franja en la linea 12 de show.blade.php.
-        
-        $consulta = Reserva::find($id_pista, $franja->$request->franja);
-        $existe = count($consulta);
 
-        if ($existe > 0) {
-            echo '<script>alert("Ya existe esa reserva")</script>';
-        } else {
+        // $consulta = Reserva::find($id_pista);
+        $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
+        ->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
+
+        if (count($consulta) == 0) {
             $reserva = new Reserva();
             $reserva->email_user = $request->email_user;
             $reserva->id_pista = $id_pista;
             $reserva->franja = $request->franja;
+            $reserva->dia = $request->dia;
+            $reserva->mes = $request->mes;
 
             $reserva->save();
+        } else {
+            /**
+             * Aquí habría que poner un route() o algo que indique que esa pista a esa hora y día ya está reservada
+             */
         }
 
-
-
-        return redirect()->route('reservas.show', $id_pista); // aquí debería poner $reserva->id() pero Laravel es mu listo
+        return redirect()->route('reservas.show', $id_pista);
 
     }
 }
