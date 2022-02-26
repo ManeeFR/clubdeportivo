@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Reserva;
 use App\Models\Pista;
+use App\Models\User;
 
 class ReservaController extends Controller
 {
@@ -53,6 +54,32 @@ class ReservaController extends Controller
         }
 
         return redirect()->route('reservas.show', $id_pista);
+
+    }
+
+    public function compruebaUser(Request $request)
+    {
+
+
+        $usuario = User::where('email', '=', $request->email)->where('password', '=', $request->password)->get();
+
+        if (count($usuario) == 0) {
+
+            // El usuario no existe en la BD
+
+            // return view('index');
+            // $pistas = Pista::all();
+            // return view('reservas.create', compact('pistas'));
+
+        } else {
+
+            return view('index');
+            // return redirect()->route('index');
+
+            // return view('create.reservas');
+            $pistas = Pista::all();
+            return view('reservas.create', compact('pistas'));
+        }
 
     }
 }
