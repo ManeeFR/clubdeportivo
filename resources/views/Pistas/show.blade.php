@@ -9,14 +9,14 @@
 <a href="{{route('reservas.create')}}">Volver a pistas</a>
 <p><strong>Categoría: </strong>{{$pistas->categoria}}</p><br><br>
 
-<form action="{{route('reservas.store', $pistas->id)}}" method="POST">
+<form action="{{route('reservas.store', $pistas->id, $franja->$request->franja)}}" method="POST">
 
     @csrf
 
     <label>
         Seleccione franja:
         <select name="franja">
-            <option value="9">  9:00 - 10:30</option>
+            <option value="9">9:00 - 10:30</option>
             <option value="10">10:30 - 12:00</option>
             <option value="12">12:00 - 13:30</option>
             <option value="16">16:00 - 17:30</option>
