@@ -25,9 +25,31 @@ class ReservaController extends Controller
 
     public function show($id)
     {
-        $pistas = Pista::find($id);
+        $pista = Pista::find($id);
         $fecha = getdate();
-        return view('pistas.show', compact('pistas', 'fecha'));
+        $franjas = ["9:00 - 10:30", "10:30 - 12:00", "12:00 - 13:30", "16:00 - 17:30", "17:30 - 19:00", "19:00 - 20:30"];
+        $reservadas = [];
+
+        for ($i=0; $i < 3; $i++) {
+            for ($j=0; $j < count($franjas); $j++) {
+                $consulta = Reserva::where('id_pista', '=', $id)->where('franja', '=', $franjas[$j])
+                                   ->where('dia', '=', $fecha['mday']+$i)->where('mes', '=', $fecha['mon'])->get();
+                if (count($consulta) == 0) {
+                    $reservadas[$i][$j] = false;
+                } else {
+                    $reservadas[$i][$j] = true;
+                }
+            }
+        }
+
+        $dias = [$fecha['mday'], $fecha['mday']+1, $fecha['mday']+2];
+
+        // $hoy = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
+        // $mañana = mktime(0, 0, 0, date("m"), date("d") + 1, date("Y"));
+        // $pasado = mktime(0, 0, 0, date("m"), date("d") + 2, date("Y"));
+
+
+        return view('pistas.show', compact('pista', 'fecha', 'franjas', 'reservadas', 'dias'));
     }
 
     // Encargado de almacenar en la BD
