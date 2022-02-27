@@ -46,7 +46,7 @@ class ReservaController extends Controller
             }
         }
 
-        $dias = [$fecha['mday'], $fecha['mday']+1, $fecha['mday']+2];
+        $dias = [date("d/m", strtotime("now")), date("d/m", strtotime("+1 days")), date("d/m", strtotime("+2 days"))];
 
         // $hoy = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
         // $mañana = mktime(0, 0, 0, date("m"), date("d") + 1, date("Y"));

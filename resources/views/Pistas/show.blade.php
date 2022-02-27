@@ -18,7 +18,7 @@
 
         <table class="m-4 p-4 flex ">
 
-            <tr><th>Día {{$dias[0]}}/{{$fecha['mon']}}</th></tr>
+            <tr><th>Día {{$dias[0]}}</th></tr>
             <tr>
                 @for ($i = 0; $i < count($franjas); $i++)
                     @if ($reservadas[0][$i] == false)
@@ -31,7 +31,7 @@
 
             <tr> <td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td></tr>
 
-            <tr><th>Día {{$dias[1]}}/{{$fecha['mon']}}</th></tr>
+            <tr><th>Día {{$dias[1]}}</th></tr>
             <tr>
                 @for ($i = 0; $i < count($franjas); $i++)
                     @if ($reservadas[1][$i] == false)
@@ -44,7 +44,7 @@
 
             <tr> <td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td></tr>
 
-            <tr><th>Día {{$dias[2]}}/{{$fecha['mon']}}</th></tr>
+            <tr><th>Día {{$dias[2]}}</th></tr>
             <tr>
                 @for ($i = 0; $i < count($franjas); $i++)
                     @if ($reservadas[2][$i] == false)
