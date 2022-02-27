@@ -23,6 +23,10 @@ class ReservaController extends Controller
         return view('reservas.create', compact('pistas'));
     }
 
+    public function welcome() {
+        return view('welcome');
+    }
+
     public function show($id)
     {
         $pista = Pista::find($id);

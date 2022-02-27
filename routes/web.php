@@ -37,7 +37,9 @@ Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.
 
 
 // Route::post('index', [ReservaController::class, 'index'])->name('reservas.index');
-Route::get('home', [ReservaController::class, 'create'])->name('home');
+Route::get('home', [ReservaController::class, 'welcome'])->name('home');
+// Route::get('home', [HomeController::class, 'welcome'])->name('home');
+
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

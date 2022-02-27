@@ -45,6 +45,10 @@ class HomeController extends Controller
     // }
 
     public function __invoke() {
-        return view('auth/login');
+        return view('welcome');
     }
+
+    // public function welcome() {
+    //     return view('welcome');
+    // }
 }
