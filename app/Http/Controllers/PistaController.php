@@ -22,16 +22,3 @@ class PistaController extends Controller
         return view('pistas.show', compact('pistas'));
     }
 }
-$consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
-->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
-
-if (count($consulta) == 0) {
-    $reserva = new Reserva();
-    $reserva->email_user = $request->email_user;
-    $reserva->id_pista = $id_pista;
-    $reserva->franja = $request->franja;
-    $reserva->dia = $request->dia;
-    $reserva->mes = $request->mes;
-
-    $reserva->save();
-}

@@ -3,7 +3,8 @@
 @section('title', 'Pista ' . $pista->id)
 
 @section('content')
-<div class="p-3 m-4">
+<div style="margin-left: 15vw">
+<div class="p-3 m-4" >
 
 <h1>Bienvenido a la pista {{$pista->id}} </h1>
 <a href="{{route('reservas.create')}}">Volver a pistas</a>
@@ -84,6 +85,7 @@
     <button type="submit">Enviar formulario</button>
 
 </form>
+</div>
 
 </div>
 

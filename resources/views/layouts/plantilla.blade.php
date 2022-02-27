@@ -18,31 +18,31 @@
             <div class="menuToggle"></div>
             <ul>
                 <li class="list active" style="--clr:#f44336;">
-                    <a href="#">
+                    <a href="{{route('home')}}">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="text">Home</span>
                     </a>
                 </li>
                 <li class="list" style="--clr:#ffa117;">
-                    <a href="#">
+                    <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="text">About</span>
                     </a>
                 </li>
                 <li class="list" style="--clr:#0fc70f;">
-                    <a href="#">
+                    <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                        <span class="text">Messages</span>
+                        <span class="text">Pistas</span>
                     </a>
                 </li>
                 <li class="list" style="--clr:#2196f3;">
-                    <a href="#">
+                    <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
                         <span class="text">Photos</span>
                     </a>
                 </li>
                 <li class="list" style="--clr:#b145e9;">
-                    <a href="#">
+                    <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="text">Settings</span>
                     </a>
