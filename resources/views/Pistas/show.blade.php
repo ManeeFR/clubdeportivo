@@ -19,10 +19,12 @@
 
         <table class="m-4 p-4 flex ">
 
-            <tr><th>Día {{$dias[0]}}</th></tr>
+            @for ($k = 0; $k < 3; $k++)
+
+            <tr><th>Día {{$dias[$k]}}</th></tr>
             <tr>
                 @for ($i = 0; $i < count($franjas); $i++)
-                    @if ($reservadas[0][$i] == false)
+                    @if ($reservadas[$k][$i] == false)
                         <td style="background-color: rgb(116, 228, 152); padding: 2vw;"> {{$franjas[$i]}}</td>
                     @else
                         <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> {{$franjas[$i]}}</td>
@@ -32,30 +34,9 @@
 
             <tr> <td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td></tr>
 
-            <tr><th>Día {{$dias[1]}}</th></tr>
-            <tr>
-                @for ($i = 0; $i < count($franjas); $i++)
-                    @if ($reservadas[1][$i] == false)
-                        <td style="background-color: rgb(116, 228, 152); padding: 2vw;"> {{$franjas[$i]}}</td>
-                    @else
-                        <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> {{$franjas[$i]}}</td>
-                    @endif
-                @endfor
-            </tr>
 
-            <tr> <td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td><td> <br><hr><br> </td></tr>
+            @endfor
 
-            <tr><th>Día {{$dias[2]}}</th></tr>
-            <tr>
-                @for ($i = 0; $i < count($franjas); $i++)
-                    @if ($reservadas[2][$i] == false)
-                        <td style="background-color: rgb(116, 228, 152); padding: 2vw;"> {{$franjas[$i]}}</td>
-                    @else
-                        <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> {{$franjas[$i]}}</td>
-                    @endif
-                @endfor
-            </tr>
-            <br><hr><br>
 
 
 
