@@ -33,7 +33,7 @@ Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.
 
 
 
-
+Route::post('reservas/checkUser', [ReservaController::class, 'checkUser']);
 
 
 // Route::post('index', [ReservaController::class, 'index'])->name('reservas.index');

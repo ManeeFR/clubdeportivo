@@ -23,8 +23,18 @@ class ReservaController extends Controller
         return view('reservas.create', compact('pistas'));
     }
 
-    public function welcome() {
-        return view('welcome');
+    public function welcome(Request $request) {
+
+        $usuario = User::where('email', '=', $request->email)->where('password', '=', $request->password)->get();
+
+        if (count($usuario) == 0) {
+
+            return redirect()->route('login');
+            // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
+
+        } else {
+            return view('welcome');
+        }
     }
 
     public function show($id)
@@ -48,11 +58,6 @@ class ReservaController extends Controller
 
         $dias = [date("d/m", strtotime("now")), date("d/m", strtotime("+1 days")), date("d/m", strtotime("+2 days"))];
 
-        // $hoy = mktime(0, 0, 0, date("m"), date("d"), date("Y"));
-        // $mañana = mktime(0, 0, 0, date("m"), date("d") + 1, date("Y"));
-        // $pasado = mktime(0, 0, 0, date("m"), date("d") + 2, date("Y"));
-
-
         return view('pistas.show', compact('pista', 'fecha', 'franjas', 'reservadas', 'dias'));
     }
 
@@ -60,7 +65,6 @@ class ReservaController extends Controller
     public function store(Request $request, $id_pista)
     {
 
-        // $consulta = Reserva::find($id_pista);
         $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
         ->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
 
@@ -83,7 +87,7 @@ class ReservaController extends Controller
 
     }
 
-    public function compruebaUser(Request $request)
+    public function checkUser(Request $request)
     {
 
 
@@ -99,12 +103,13 @@ class ReservaController extends Controller
 
         } else {
 
-            return view('index');
+            return redirect()->route('home');
+            // return view('home');
             // return redirect()->route('index');
 
             // return view('create.reservas');
-            $pistas = Pista::all();
-            return view('reservas.create', compact('pistas'));
+            // $pistas = Pista::all();
+            // return view('reservas.create', compact('pistas'));
         }
 
     }
