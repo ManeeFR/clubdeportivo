@@ -311,7 +311,6 @@ body {
       </div>
     </div>
   </div>
-  <div class="pen-footer"><a href="https://www.behance.net/gallery/30478397/Login-Form-UI-Library" target="_blank"><i class="material-icons">arrow_backward</i>View on Behance</a><a href="https://github.com/andyhqtran/UI-Library/tree/master/Login%20Form" target="_blank">View on Github<i class="material-icons">arrow_forward</i></a></div>
   <script>
       $(document).ready(function() {
   var panelOne = $('.form-panel.two').height(),
