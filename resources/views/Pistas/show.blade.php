@@ -45,14 +45,14 @@
 
 
 
-        {{-- <select name="franja">
+        <select name="franja">
             <option value="9:00 - 10:30">9:00 - 10:30</option>
             <option value="10:30 - 12:00">10:30 - 12:00</option>
             <option value="12:00 - 13:30">12:00 - 13:30</option>
             <option value="16:00 - 17:30">16:00 - 17:30</option>
             <option value="17:30 - 19:00">17:30 - 19:00</option>
             <option value="19:00 - 20:30">19:00 - 20:30</option>
-        </select> --}}
+        </select>
     </label><br><br>
 
     <label>
@@ -60,8 +60,10 @@
         <input type="email" name="email_user">
     </label><br><br>
 
-    <input type="hidden" name="dia" value={{$fecha['mday']}}>
-    <input type="hidden" name="mes" value={{$fecha['mon']}}>
+    <input type="hidden" name="fecha" value={{date('Y/m/d', strtotime('now'))}}>
+
+    {{-- <input type="hidden" name="fecha" value={{$fecha1['mday']}}> --}}
+    {{-- <input type="hidden" name="fecha" value={{$fecha1['mon']}}> --}}
 
     <button type="submit">Enviar formulario</button>
 

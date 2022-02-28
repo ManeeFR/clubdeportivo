@@ -26,8 +26,9 @@ class ReservaFactory extends Factory {
             'email_user' => $this->faker->unique()->safeEmail(),
             'id_pista'  => $this->faker->numberBetween(1, 6),
             'franja' => $this->faker->randomElement(['9:00 - 10:30', '10:30 - 12:00', '12:00 - 13:30', '16:00 - 17:30', '17:30 - 19:00', '19:00 - 20:30']),
-            'dia'  => $this->faker->numberBetween($fecha['mday'], $fecha['mday'] + 3),
-            'mes'  => $fecha['mon']
+            'fecha' => $this->faker->date('Y/m/d', strtotime("now"))
+            // 'dia'  => $this->faker->numberBetween($fecha['mday'], $fecha['mday'] + 3),
+            // 'mes'  => $fecha['mon']
         ];
     }
 }

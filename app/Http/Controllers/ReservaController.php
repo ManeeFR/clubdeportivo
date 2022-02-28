@@ -47,40 +47,48 @@ class ReservaController extends Controller
     {
         $pista = Pista::find($id);
         $fecha = getdate();
+        $fecha1 = $fecha['year']."/".$fecha['mon']."/".$fecha['mday'];
         $franjas = ["9:00 - 10:30", "10:30 - 12:00", "12:00 - 13:30", "16:00 - 17:30", "17:30 - 19:00", "19:00 - 20:30"];
         $reservadas = [];
 
         for ($i=0; $i < 3; $i++) {
             for ($j=0; $j < count($franjas); $j++) {
                 $consulta = Reserva::where('id_pista', '=', $id)->where('franja', '=', $franjas[$j])
-                                   ->where('dia', '=', $fecha['mday']+$i)->where('mes', '=', $fecha['mon'])->get();
+                                   ->where('fecha', '=', $fecha1)->get();
                 if (count($consulta) == 0) {
                     $reservadas[$i][$j] = false;
+                    
                 } else {
                     $reservadas[$i][$j] = true;
                 }
             }
         }
+        echo (json_encode($reservadas));
 
         $dias = [date("d/m", strtotime("now")), date("d/m", strtotime("+1 days")), date("d/m", strtotime("+2 days"))];
 
-        return view('pistas.show', compact('pista', 'fecha', 'franjas', 'reservadas', 'dias'));
+        return view('pistas.show', compact('pista', 'franjas', 'reservadas', 'dias'));
     }
 
     // Encargado de almacenar en la BD
+    // Mediante request recuperamos todos los datos introducidos en el formulario.
     public function store(Request $request, $id_pista)
     {
 
+        // $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
+        // ->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
+
         $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
-        ->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
+        ->where('fecha', '=', $request->fecha)->get();
 
         if (count($consulta) == 0) {
             $reserva = new Reserva();
             $reserva->email_user = $request->email_user;
             $reserva->id_pista = $id_pista;
             $reserva->franja = $request->franja;
-            $reserva->dia = $request->dia;
-            $reserva->mes = $request->mes;
+            $reserva->fecha = $request->fecha;
+            // $reserva->dia = $request->dia;
+            // $reserva->mes = $request->mes;
 
             $reserva->save();
         } else {

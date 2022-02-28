@@ -38,6 +38,7 @@ Route::post('reservas/checkUser', [ReservaController::class, 'checkUser']);
 
 // Route::post('index', [ReservaController::class, 'index'])->name('reservas.index');
 Route::get('home', [ReservaController::class, 'welcome'])->name('home');
+Route::post('home', [ReservaController::class, 'welcome'])->name('home');
 // Route::get('home', [HomeController::class, 'welcome'])->name('home');
 
 
