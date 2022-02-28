@@ -48,24 +48,25 @@ class ReservaController extends Controller
         $pista = Pista::find($id);
         $fecha = getdate();
         $fecha1 = $fecha['year']."/".$fecha['mon']."/".$fecha['mday'];
-        $franjas = ["9:00 - 10:30", "10:30 - 12:00", "12:00 - 13:30", "16:00 - 17:30", "17:30 - 19:00", "19:00 - 20:30"];
+        $franjas = ["9:00-10:30", "10:30-12:00", "12:00-13:30", "16:00-17:30", "17:30-19:00", "19:00-20:30"];
         $reservadas = [];
+        $dias = [date("Y/m/d", strtotime("now")), date("Y/m/d", strtotime("+1 days")), date("Y/m/d", strtotime("+2 days"))];
 
         for ($i=0; $i < 3; $i++) {
             for ($j=0; $j < count($franjas); $j++) {
                 $consulta = Reserva::where('id_pista', '=', $id)->where('franja', '=', $franjas[$j])
-                                   ->where('fecha', '=', $fecha1)->get();
+                                   ->where('fecha', '=', $dias[$i])->get();
                 if (count($consulta) == 0) {
                     $reservadas[$i][$j] = false;
-                    
+
                 } else {
                     $reservadas[$i][$j] = true;
                 }
             }
         }
-        echo (json_encode($reservadas));
+        // echo (json_encode($franjas));
 
-        $dias = [date("d/m", strtotime("now")), date("d/m", strtotime("+1 days")), date("d/m", strtotime("+2 days"))];
+
 
         return view('pistas.show', compact('pista', 'franjas', 'reservadas', 'dias'));
     }
