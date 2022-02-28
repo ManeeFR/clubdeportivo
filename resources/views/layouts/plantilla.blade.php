@@ -36,7 +36,7 @@
                 </li>
                 <li class="list active" style="--clr:#0fc70f;">
                     <a href="{{route('reservas.create')}}">
-                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="flag-outline"></ion-icon></span>
                         <span class="text">Pistas</span>
                     </a>
                 </li>
@@ -47,8 +47,8 @@
                     </a>
                 </li>
                 <li class="list active" style="--clr:#b145e9;">
-                    <a href="{{route('reservas.create')}}">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <a href="{{url('https://www.eltiempo.es/utrera.html')}}">
+                        <span class="icon"><ion-icon name="cloud-outline"></ion-icon></span>
                         <span class="text">Settings</span>
                     </a>
                 </li>

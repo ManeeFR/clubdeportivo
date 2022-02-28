@@ -19,6 +19,12 @@ class ReservaController extends Controller
         return view('reservas.index', compact('reservas'));
     }
 
+    // public function tiempo()
+    // {
+    //     return view('reservas.index');
+    //     // AQUI DEVOLVER PAGINA DEL TIEMPO EN UTRERA
+    // }
+
     public function create()
     {
         $pistas = Pista::all();

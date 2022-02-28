@@ -35,7 +35,7 @@
                         <td style="background-color: rgb(116, 228, 152); padding: 2vw;"> <button type="submit" name="franja" value={{$franjas[$i]}}>{{$franjas[$i]}}</button> </td>
                     {{-- <td style="background-color: rgb(116, 228, 152); padding: 2vw;"> {{$franjas[$i]}}</td> --}}
                     @else
-                        <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> <button type="submit" name="franja" value={{$franjas[$i]}}>{{$franjas[$i]}}</button> </td>
+                        <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> {{$franjas[$i]}} </td>
                         {{-- <td style="background-color: rgb(231, 145, 123); padding: 2vw;"> {{$franjas[$i]}}</td> --}}
                     @endif
                 @endfor
