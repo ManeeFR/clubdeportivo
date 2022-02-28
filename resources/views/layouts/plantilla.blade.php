@@ -17,31 +17,36 @@
         <div class="navigation">
             <div class="menuToggle"></div>
             <ul>
+
+                {{-- CREO QUE EL PROBLEMA DE LO DE ACTIVE ES QUE ESTAMOS USANDO UNA PLANTILLA, Y QUE AL CARGARSE LA PAGINA
+                COMO QUE RESETEA TODO O ALGO Y NO FUNCIONA BIEN EL SCRIPT QUE ESTÁ AL FINAL DE ESTA PLANTILLA --}}
+
+
                 <li class="list active" style="--clr:#f44336;">
                     <a href="{{route('home')}}">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="text">Home</span>
                     </a>
                 </li>
-                <li class="list" style="--clr:#ffa117;">
+                <li class="list active" style="--clr:#ffa117;">
                     <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="text">About</span>
                     </a>
                 </li>
-                <li class="list" style="--clr:#0fc70f;">
+                <li class="list active" style="--clr:#0fc70f;">
                     <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
                         <span class="text">Pistas</span>
                     </a>
                 </li>
-                <li class="list" style="--clr:#2196f3;">
+                <li class="list active" style="--clr:#2196f3;">
                     <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
                         <span class="text">Photos</span>
                     </a>
                 </li>
-                <li class="list" style="--clr:#b145e9;">
+                <li class="list active" style="--clr:#b145e9;">
                     <a href="{{route('reservas.create')}}">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="text">Settings</span>

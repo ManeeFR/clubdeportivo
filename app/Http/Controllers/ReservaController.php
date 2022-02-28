@@ -25,12 +25,18 @@ class ReservaController extends Controller
 
     public function welcome(Request $request) {
 
-        $usuario = User::where('email', '=', $request->email)->where('password', '=', $request->password)->get();
+        if (isset($request->email)) {
 
-        if (count($usuario) == 0) {
+            $usuario = User::where('email', '=', $request->email)->where('password', '=', $request->password)->get();
 
-            return redirect()->route('login');
-            // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
+            if (count($usuario) == 0) {
+
+                return redirect()->route('login');
+                // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
+
+            } else {
+                return view('welcome');
+            }
 
         } else {
             return view('welcome');
