@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Reserva;
 use App\Models\Pista;
 use App\Models\User;
+session_start();
+
 
 class ReservaController extends Controller
 {
@@ -35,6 +37,11 @@ class ReservaController extends Controller
                 // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
 
             } else {
+                // $_SESSION['email'] = $request->email;
+                // session(['email' => $request->email]);
+                $_SESSION['email'] = $request->email;
+                // $request->session()->put(['email'=>$request->email]);
+                // session(['user' => $request->email]);
                 return view('welcome');
             }
 
@@ -84,12 +91,11 @@ class ReservaController extends Controller
 
         if (count($consulta) == 0) {
             $reserva = new Reserva();
-            $reserva->email_user = $request->email_user;
+            $reserva->email_user = $_SESSION['email'];
+            // $reserva->email_user = $request->session()->get(['email']);
             $reserva->id_pista = $id_pista;
             $reserva->franja = $request->franja;
             $reserva->fecha = $request->fecha;
-            // $reserva->dia = $request->dia;
-            // $reserva->mes = $request->mes;
 
             $reserva->save();
         } else {

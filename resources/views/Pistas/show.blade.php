@@ -27,6 +27,8 @@
 
             <tr><th>Día {{$dias[$k]}}</th></tr>
             <input type="hidden" name="fecha" value={{date("Y/m/d", strtotime("+". $k ." days"))}} required>
+            {{-- <input type="hidden" name="fecha" value={{date("Y/m/d", strtotime("+". $k ." days"))}} required> --}}
+
             <tr>
                 @for ($i = 0; $i < count($franjas); $i++)
                     @if ($reservadas[$k][$i] == false)
@@ -47,10 +49,10 @@
 
     </label><br><br>
 
-    <label>
+    {{-- <label>
         Email:
         <input type="email" name="email_user" required>
-    </label><br><br>
+    </label><br><br> --}}
 
 
 </form>
