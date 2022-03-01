@@ -17,7 +17,7 @@ class PistaController extends Controller
             $imagenes = ['img/post/padel_01.webp','img/post/padel_02.jpg','img/post/padel_03.jpg','img/post/padel_04.jpg','img/post/padel_05.jpg','img/post/padel_06.jpg'];
             return view('pistas.index', compact('pistas', 'imagenes', 'cont'));
         } else {
-            return redirect()->route('pageError');
+            return redirect()->route('login');
         }
     }
 
@@ -26,7 +26,7 @@ class PistaController extends Controller
             $pistas = Pista::find($id);
             return view('pistas.show', compact('pistas'));
         } else {
-            return redirect()->route('pageError');
+            return redirect()->route('login');
         }
     }
 
@@ -50,8 +50,7 @@ class PistaController extends Controller
             if (count($usuario) == 0) {
 
                 return redirect()->route('login');
-                // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA
-                // CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
+                
 
             } else {
                 $_SESSION['email'] = $request->email;
@@ -67,7 +66,7 @@ class PistaController extends Controller
         if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
             return view('gallery');
         } else {
-            return redirect()->route('pageError');
+            return redirect()->route('login');
         }
     }
 

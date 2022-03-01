@@ -15,13 +15,18 @@
   src: url("{{ asset('fonts/Lato-Regular.ttf') }}");
 }
 * {
-  color: black;
+  
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 62.5%;
   /* background-color: #3d4152; */
+}
+
+h1, h2, h3, p{
+  color: black;
+
 }
 
 h1 {
@@ -54,6 +59,7 @@ span {
 }
 
 body {
+
   background-color: #ffffff;
 }
 

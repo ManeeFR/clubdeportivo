@@ -17,7 +17,7 @@ Route::get('/', HomeController::class);
 
 Route::controller(PistaController::class)->group(function() {
 
-    // Route::get('home', 'welcome')->name('home');
+    Route::get('home', 'welcome')->name('home');
     Route::post('home', 'welcome')->name('home');
 
     Route::get('pistas', 'index')->name('pistas');
