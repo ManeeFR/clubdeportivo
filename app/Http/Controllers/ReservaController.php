@@ -110,7 +110,7 @@ class ReservaController extends Controller
              */
         }
 
-        return redirect()->route('reservas.show', $id_pista);
+        return redirect()->route('contactanos');
 
     }
 

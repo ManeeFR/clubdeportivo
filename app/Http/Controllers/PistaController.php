@@ -14,10 +14,6 @@ class PistaController extends Controller
     }
 
     public function show($id) {
-
-
-
-
         $pistas = Pista::find($id);
         return view('pistas.show', compact('pistas'));
     }

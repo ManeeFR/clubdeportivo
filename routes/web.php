@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 
 ////////////////////////////PÁGINA PRINCIPAL////////////////////////////
@@ -31,6 +33,14 @@ Route::post('reservas/store/{id}', [ReservaController::class, 'store'])->name('r
 Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.show');
 
 
+Route::get('contactanos', function () {
+
+    $correo = new ContactanosMailable;
+    Mail::to('manuel.fr.6b@gmail.com')->send($correo);
+
+    return view('emails.contactanos');
+
+})->name('contactanos');
 
 
 Route::post('reservas/checkUser', [ReservaController::class, 'checkUser']);
