@@ -121,7 +121,7 @@
   margin: auto;
 }
 </style>
-
+<h1 style="position: absolute; left:40vw; top:6vh; font-size: 1.8em;">Galería último torneo</h1>
 <div class="carousel">
     <div class="wrap">
       <ul>
