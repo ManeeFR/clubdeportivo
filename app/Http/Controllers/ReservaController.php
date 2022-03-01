@@ -80,8 +80,7 @@ class ReservaController extends Controller
     public function store(Request $request, $id_pista)
     {
 
-        $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
-        ->where('fecha', '=', $request->fecha)->get();
+        $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
 
         if (count($consulta) == 0) {
             $reserva = new Reserva();

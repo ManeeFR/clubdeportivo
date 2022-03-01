@@ -6,7 +6,12 @@
 
 <style>
 @charset "UTF-8";
+
+
+
 .carousel {
+  position: relative;
+  left: 500px;
   display: block;
   font-size: 0;
   border-radius: 8px;
@@ -14,7 +19,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   background: white;
   transform: translateZ(0);
-  height: 218px;
+  height: 500px;
   -webkit-overflow-scrolling: touch;
   /* for tablets */
 }
@@ -42,7 +47,7 @@
   opacity: 0;
   width: var(--scrollWidth, 0);
   left: var(--scrollLleft, 0);
-  transition: opacity 0.2s, bottom 0.2s;
+  transition: opacity 0.7s, bottom 0.7ms;
 }
 .carousel:hover::after {
   opacity: 1;
@@ -80,7 +85,7 @@
 .carousel > .wrap > ul {
   list-style: none;
   white-space: nowrap;
-  height: 200px;
+  height: 485px;
 }
 .carousel > .wrap > ul > li {
   display: inline-block;
@@ -120,13 +125,13 @@
 <div class="carousel">
     <div class="wrap">
       <ul>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
-        <li> <img src="{{asset('img/post/padel_02.webp')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_02.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_03.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_04.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_05.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_06.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_02.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padel_02.jpg')}}" alt="pista">"/></li>
       </ul>
     </div>
   </div>

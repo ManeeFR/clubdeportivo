@@ -10,8 +10,8 @@
 
     }
     .img:hover {
-        transform: rotate(2deg) scale(1.1);
-        transition: transform 1s;
+        transform: scale(1.1);
+        transition: transform 0.5s;
     }
 </style>
 
@@ -22,7 +22,7 @@
 
         @foreach ($pistas as $pista)
             <div class="img" style="border-radius:10px; max-height:15vw; max-width:20vw; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);">
-                <a href="{{route('reservas.show', $pista->id)}}"><img src="{{asset('img/post/padel_02.webp')}}" style="border-radius:6px;" alt="pista"><div style="background-color: #353f6e;"> Pista {{$pista->id}}</div></a>
+                <a href="{{route('reservas.show', $pista->id)}}"><img src="{{asset($imagenes[$cont++])}}" style="border-radius:6px;" alt="pista"><div style="background-color: #353f6e;"> Pista {{$pista->id}}</div></a>
             </div>
 
         @endforeach
