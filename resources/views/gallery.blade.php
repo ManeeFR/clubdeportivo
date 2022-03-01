@@ -122,7 +122,7 @@
 }
 </style>
 {{-- position: absolute; left:40vw; top:6vh; font-size: 1.8em; --}}
-<h1 style="display: flex; justify-content: center; padding: 40px; font-size: 40px" >Galería último torneo</h1>
+<h1 style="display: flex; justify-content: center; padding: 40px; font-size: 40px" >Fotos del último torneo</h1>
 <div class="carousel">
     <div class="wrap">
       <ul>
