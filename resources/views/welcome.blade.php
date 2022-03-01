@@ -41,7 +41,7 @@ h2 {
 
 h3 {
   font-size: 2.4rem;
-  font-family: "manuscrita";
+  font-family: "titulos";
 }
 
 p {
@@ -90,7 +90,7 @@ body {
 
 .menu {
   width: 100%;
-  background-color: #7bd1d7;
+  background-color: #141616;
   display: flex;
   justify-content: center;
   padding: 20px 0;
@@ -124,9 +124,7 @@ main {
   margin: 50px auto;
   text-align: center;
 }
-main h3 {
-  color: #7bd1d7;
-}
+
 main p {
   margin: 30px auto;
 }
@@ -167,11 +165,11 @@ main .main__cards .card .card__txt a {
   display: block;
   width: 100%;
   padding: 15px 0;
-  background-color: #e082a8;
+  background-color: #1e008b;
   font-size: 2rem;
 }
 main .main__cards .card .card__txt a:hover {
-  background-color: #a05c77;
+  background-color: #1e008b;
   transition: background-color 1s;
 }
 main .horarios {
@@ -180,7 +178,7 @@ main .horarios {
 }
 main .horarios .horarios__txt {
   font-family: "titulos";
-  background-color: #7bd1d7;
+  background-color: hsl(234, 94%, 68%);
   width: 50%;
   display: flex;
   justify-content: end;
@@ -206,13 +204,13 @@ main .horarios .horarios__txt div .horarios__table tr td, main .horarios .horari
   padding: 10px 40px;
 }
 main .horarios .horarios__txt div .horarios__table tr:hover {
-  background-color: #63a7ac;
+  background-color: #1e008b;
 }
 main .horarios .horarios__txt div .horarios__table tr:nth-child(1):hover {
   background-color: #e082a8;
 }
 main .horarios .horarios__img {
-  background-image: url("{{ asset('img/post/bg_horarios.jpg') }}");
+  background-image: url("{{ asset('img/post/bg_horario.jpg') }}");
   background-size: cover;
   background-position: center right;
   width: 50%;
@@ -252,14 +250,14 @@ main .productos .productos__cont .productos__cont__card p {
 main .productos .productos__cont .productos__cont__card h4 {
   font-family: "titulos";
   font-size: 2.4rem;
-  color: #7bd1d7;
+  color: #1e008b;
 }
 
 .imagen__scroll {
   margin: 40px 0;
   height: 45rem;
   width: 100%;
-  background-image: url("{{ asset('img/post/bg_citas.jpg') }}");
+  background-image: url("{{ asset('img/post/bg_padel.jpg') }}");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -283,7 +281,7 @@ main .productos .productos__cont .productos__cont__card h4 {
   display: block;
   padding: 15px 0;
   font-size: 2rem;
-  background-color: #7bd1d7;
+  background-color: #1e008b;
 }
 .imagen__scroll div a:hover {
   background-color: #e082a8;
@@ -291,12 +289,12 @@ main .productos .productos__cont .productos__cont__card h4 {
 }
 
 .footer {
-  border-bottom: 1px solid #7bd1d7;
+  border-bottom: 1px solid #1e008b;
   padding-bottom: 20px;
   margin: 0 auto;
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
   text-align: center;
 }
@@ -417,11 +415,11 @@ span {
         </div>
 
         <div class="header__contNav">
-            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
-            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
-            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
-            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
-            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href="https://www.facebook.com/"><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href="https://www.twitter.com/"><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href="https://www.instagram.com/"><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href="https://www.youtube.com/"><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href="https://www.tiktok.com/"><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
         </div>
     </header>
 
@@ -445,7 +443,7 @@ span {
                 </div>
             </div>
             <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"  class="card">
-                <img src="{{asset('img/post/servicio_02.jpg')}}" alt="Servicio 02">
+                <img src="{{asset('img/post/servicios_02.jpg')}}" alt="Servicio 02">
                 <div class="card__txt">
                     <h3>nuestros</>
                     <h2>SERVICIOS</h2>
@@ -476,33 +474,33 @@ span {
                     </tr>
                     <tr>
                         <td>Lunes</td>
-                        <td>10:00</td>
-                        <td>20:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Martes</td>
-                        <td>10:00</td>
-                        <td>20:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Miércoles</td>
-                        <td>10:00</td>
-                        <td>20:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Jueves</td>
-                        <td>10:00</td>
-                        <td>20:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Viernes</td>
-                        <td>10:00</td>
-                        <td>20:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Sábado</td>
-                        <td>10:00</td>
-                        <td>23:00</td>
+                        <td>9:00</td>
+                        <td>21:00</td>
                     </tr>
                     <tr>
                         <td>Domingo</td>
@@ -525,7 +523,7 @@ span {
             <div class="productos__cont">
                 <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/producto_01.jpg')}}" alt="">
+                        <img src="{{asset('img/post/productos_01.jpg')}}" alt="">
                     </div>
                     <h4>Producto 1</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
@@ -533,7 +531,7 @@ span {
                 </div>
                 <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/producto_02.jpg')}}" alt="">
+                        <img src="{{asset('img/post/productos_02.jpg')}}" alt="">
                     </div>
                     <h4>Producto 2</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
@@ -541,7 +539,7 @@ span {
                 </div>
                 <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/producto_03.jpg')}}" alt="">
+                        <img src="{{asset('img/post/productos_03.jpg')}}" alt="">
                     </div>
                     <h4>Producto 3</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
@@ -549,7 +547,7 @@ span {
                 </div>
                 <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/producto_04.jpg')}}" alt="">
+                        <img src="{{asset('img/post/productos_04.jpg')}}" alt="">
                     </div>
                     <h4>Producto 4</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
@@ -573,31 +571,23 @@ span {
 
     </main>
 
-
     <footer class="footer">
         <div class="footer__nosotros">
             <h2 style="color: black;">NOSOTROS</h2>
             <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias modi ex itaque quasi minima maxime deserunt ullam qui quis earum. Obcaecati nisi rerum iure sint facilis eum, magnam quisquam officia!</p>
         </div>
 
-        <div class="footer__horario">
-            <h2 style="color: black;">HORARIO</h2>
-            <ul>
-                <li style="color: black;">Lun-Vie: 10h. - 20h.</li>
-                <li style="color: black;">Sábado: 10AM - 23h.</li>
-                <li style="color: black;">Domingo: Cerrado</li>
-            </ul>
-        </div>
+        
 
         <div class="footer__contacto">
-            <h2 style="color: black;">CONTATCO</h2>
+            <h2 style="color: black;">CONTACTO</h2>
             <p style="color: black;">Av. Constitución, 14</p>
             <div class="footer__contacto__redes">
-                <a href=""><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
-                <a href=""><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
-                <a href=""><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
-                <a href=""><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
-                <a href=""><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
+                <a href="https://www.facebook.com/"><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
+                <a href="https://www.twitter.com/"><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
+                <a href="https://www.instagram.com/"><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
+                <a href="https://www.youtube.com/"><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
+                <a href="https://www.tiktok.com/"><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
             </div>
         </div>
     </footer>
