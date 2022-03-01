@@ -125,7 +125,7 @@
 <div class="carousel">
     <div class="wrap">
       <ul>
-        <li> <img src="{{asset('img/post/padel_02.jpg')}}" alt="pista">"/></li>
+        <li> <img src="{{asset('img/post/padelgallery_01.jpg')}}" alt="pista">"/></li>
         <li> <img src="{{asset('img/post/padel_03.jpg')}}" alt="pista">"/></li>
         <li> <img src="{{asset('img/post/padel_04.jpg')}}" alt="pista">"/></li>
         <li> <img src="{{asset('img/post/padel_05.jpg')}}" alt="pista">"/></li>
