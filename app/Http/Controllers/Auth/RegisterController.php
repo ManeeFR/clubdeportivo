@@ -70,5 +70,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => $data['password']
         ]);
+
+        // $usuario = new User();
+        // $usuario->name = $data['name'];
+        // $usuario->email = $data['email'];
+        // $usuario->password = $data['password'];
+
+        // $usuario->save();
+
+        // return view('auth.login');
     }
 }

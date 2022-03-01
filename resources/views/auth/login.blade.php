@@ -299,7 +299,10 @@ body {
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            {{-- <input id="name" type="text" name="name" required="required"/> --}}
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required="required"/>
           </div>
           <div class="form-group">
             <label for="password">Contraseña</label>
@@ -308,10 +311,6 @@ body {
           <div class="form-group">
             <label for="password-confirm">Confirmar contraseña</label>
             <input id="password-confirm" type="password" name="password_confirmation" required="required"/>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required="required"/>
           </div>
           <div class="form-group">
             <button type="submit">Registrarme</button>

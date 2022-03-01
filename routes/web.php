@@ -5,33 +5,33 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\PistaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ConfirmPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Mail\ContactanosMailable;
 use Illuminate\Support\Facades\Mail;
 
 
-////////////////////////////PÁGINA PRINCIPAL////////////////////////////
 Route::get('/', HomeController::class);
 
 
-////////////////////////////PÁGINA RESERVAS////////////////////////////
-Route::get('reservas', [ReservaController::class, 'index'])->name('reservas.index');
+Route::controller(PistaController::class)->group(function() {
+
+    // Route::get('home', 'welcome')->name('home');
+    Route::post('home', 'welcome')->name('home');
+
+    Route::get('pistas', 'index')->name('pistas');
+    Route::get('gallery', 'gallery')->name('gallery');
+});
 
 
-////////////////////////////PÁGINA CREATE, DENTRO DE PÁGINA RESERVAS////////////////////////////
-Route::get('pistas', [PistaController::class, 'index'])->name('pistas');
+Route::controller(ReservaController::class)->group(function() {
 
+    Route::post('reservas/store/{id}', 'store')->name('reservas.store');
 
-//////////////////PÁGINA STORE, PARA ALMACENAR EN LA BD//////////////
-Route::post('reservas/store/{id}', [ReservaController::class, 'store'])->name('reservas.store');
+    Route::get('reservas/{id}', 'show')->name('reservas.show');
 
-
-////////////////////////////PÁGINA RESERVAS CON UNA O DOS VARIABLES////////////////////////////
-Route::get('reservas/{id}', [ReservaController::class, 'show'])->name('reservas.show');
+});
 
 
 Route::get('contactanos', function () {
@@ -44,14 +44,7 @@ Route::get('contactanos', function () {
 })->name('contactanos');
 
 
-Route::post('reservas/checkUser', [ReservaController::class, 'checkUser']);
-Route::get('gallery', [ReservaController::class, 'gallery'])->name('gallery');
-
-
-// Route::post('index', [ReservaController::class, 'index'])->name('reservas.index');
-Route::get('home', [ReservaController::class, 'welcome'])->name('home');
-Route::post('home', [ReservaController::class, 'welcome'])->name('home');
-// Route::get('home', [HomeController::class, 'welcome'])->name('home');
+Route::get('pageError', [PistaController::class, 'pageError'])->name('pageError');
 
 
 // Authentication Routes...
@@ -68,4 +61,3 @@ Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestF
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail']);
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm']);
 Route::post('password/reset', [ResetPasswordController::class, 'reset']);
-
