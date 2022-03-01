@@ -15,6 +15,7 @@
   src: url("{{ asset('fonts/Lato-Regular.ttf') }}");
 }
 * {
+  color: black;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -53,7 +54,7 @@ span {
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 
 .header {
@@ -393,6 +394,15 @@ span {
 
 
     </style>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      </script>
+
 
     <header class="header">
         <div class="header__contImg" style="display: flex; flex: 1 1;">
@@ -401,11 +411,11 @@ span {
         </div>
 
         <div class="header__contNav">
-            <a href=""><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
-            <a href=""><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
-            <a href=""><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
-            <a href=""><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
-            <a href=""><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_facebook.svg')}}" alt="Facebook"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_twitter.svg')}}" alt="Twitter"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_instagram.svg')}}" alt="Instagram"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_youtube.svg')}}" alt="Youtube"></a>
+            <a data-aos="fade-down" data-aos-delay="200" href=""><img src="{{asset('img/post/icono_tiktok.svg')}}" alt="Tiktok"></a>
         </div>
     </header>
 
@@ -420,7 +430,7 @@ span {
 
 
         <section class="main__cards">
-            <div class="card">
+            <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"  class="card">
                 <img src="{{asset('img/post/servicio_01.jpg')}}" alt="Servicio 01">
                 <div class="card__txt">
                     <h3>conoce mas sobre</h3>
@@ -428,7 +438,7 @@ span {
                     <a href="#">LEER MÁS</a>
                 </div>
             </div>
-            <div class="card">
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"  class="card">
                 <img src="{{asset('img/post/servicio_02.jpg')}}" alt="Servicio 02">
                 <div class="card__txt">
                     <h3>nuestros</>
@@ -436,7 +446,7 @@ span {
                     <a href="#">LEER MÁS</a>
                 </div>
             </div>
-            <div class="card">
+            <div data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000"  class="card">
                 <img src="{{asset('img/post/servicio_03.jpg')}}" alt="Servicio 03">
                 <div class="card__txt">
                     <h3>visita nuestra</h3>
@@ -449,10 +459,10 @@ span {
 
         <section class="horarios">
             <div class="horarios__txt">
-                <div>
+                <div data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
                     <h2>HORARIOS</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sed enim corporis eius quo repellendus placeat voluptas? Amet ullam nam neque assumenda voluptates, possimus nulla eum quas commodi, qui dolorum!</p>
-                <table class="horarios__table">
+                <table class="horarios__table" >
                     <tr>
                         <th>Dia</th>
                         <th>De</th>
@@ -507,7 +517,7 @@ span {
             <h1>PRODUCTOS</h1>
 
             <div class="productos__cont">
-                <div class="productos__cont__card">
+                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
                         <img src="{{asset('img/post/producto_01.jpg')}}" alt="">
                     </div>
@@ -515,7 +525,7 @@ span {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
                     <h4>30€</h4>
                 </div>
-                <div class="productos__cont__card">
+                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
                         <img src="{{asset('img/post/producto_02.jpg')}}" alt="">
                     </div>
@@ -523,7 +533,7 @@ span {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
                     <h4>40€</h4>
                 </div>
-                <div class="productos__cont__card">
+                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
                         <img src="{{asset('img/post/producto_03.jpg')}}" alt="">
                     </div>
@@ -531,7 +541,7 @@ span {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
                     <h4>50€</h4>
                 </div>
-                <div class="productos__cont__card">
+                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
                     <div class="productos__cont__card__foto">
                         <img src="{{asset('img/post/producto_04.jpg')}}" alt="">
                     </div>
