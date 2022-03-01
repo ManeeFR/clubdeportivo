@@ -8,24 +8,26 @@
     <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
+
     .before {
         width: 130px;
     }
     .menuToggle::before, .menuToggle::after{
         margin-left: 1.5vw;
     }
+
 </style>
 </head>
 <body>
 
     <body>
-        <div class="navigation before">
+        <div class="navigation before" style="background-color: #161a1e;">
             <div class="menuToggle"></div>
             <ul>
 
                 <li class="list active" style="--clr:#f44336;">
                     <a href="{{route('home')}}">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon style="height: 30px; width: 30px;" name="home-outline"></ion-icon></span>
                         <span class="text">Inicio</span>
                     </a>
                 </li>
@@ -36,20 +38,20 @@
                     </a>
                 </li> --}}
                 <li class="list active" style="--clr:#0fc70f;">
-                    <a href="{{route('reservas.create')}}">
-                        <span class="icon"><ion-icon name="flag-outline"></ion-icon></span>
+                    <a href="{{route('pistas')}}">
+                        <span class="icon"><ion-icon style="height: 30px; width: 30px;" name="flag-outline"></ion-icon></span>
                         <span class="text">Pistas</span>
                     </a>
                 </li>
                 <li class="list active" style="--clr:#ffa117;">
-                    <a href="{{route('reservas.create')}}">
-                        <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <a href="{{route('gallery')}}">
+                        <span class="icon"><ion-icon style="height: 30px; width: 30px;" name="camera-outline"></ion-icon></span>
                         <span class="text">Galería</span>
                     </a>
                 </li>
                 <li class="list active" style="--clr:#b145e9;">
                     <a href="{{url('https://www.eltiempo.es/utrera.html')}}">
-                        <span class="icon"><ion-icon name="cloud-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon style="height: 30px; width: 30px;" name="cloud-outline"></ion-icon></span>
                         <span class="text">Tiempo</span>
                     </a>
                 </li>
@@ -78,6 +80,7 @@
         </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
 
 </body>

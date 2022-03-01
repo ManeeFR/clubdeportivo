@@ -216,14 +216,14 @@ body {
 .form-header {
   margin: 0 0 40px;
 }
-.form-header h1 {
+.form-header h2 {
   padding: 4px 0;
   color: #4285f4;
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
 }
-.two .form-header h1 {
+.two .form-header h2 {
   position: relative;
   z-index: 40;
   color: #ffffff;
@@ -253,12 +253,13 @@ body {
   color: #4285f4 !important;
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class="form" >
     <div class="form-toggle"></div>
     <div class="form-panel one">
       <div class="form-header">
-        <h1>Account Login</h1>
+        <h2>Ingresar en cuenta ya creada</h2>
       </div>
       <div class="form-content">
         <form method="POST" action="{{ route('home') }}">
@@ -268,44 +269,52 @@ body {
             <input id="email" type="text" name="email" required="required"/>
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Contraseña</label>
             <input id="password" type="password" name="password" required="required"/>
           </div>
           <div class="form-group">
             <label class="form-remember">
-              <input type="checkbox"/>Remember Me
-            </label><a class="form-recovery" href="#">Forgot Password?</a>
+              <input type="checkbox"/>Recuérdame
+            </label><a class="form-recovery" href="#">¿Olvidaste la contraseña?</a>
           </div>
           <div class="form-group">
-            <button type="submit">Log In</button>
+            <button type="submit">Entrar</button>
           </div>
         </form>
       </div>
     </div>
     <div class="form-panel two">
       <div class="form-header">
-        <h1>Register Account</h1>
+        <h2>Registrarme</h2>
       </div>
       <div class="form-content">
-        <form>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
           <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" type="text" name="username" required="required"/>
+            <label for="name">Nombre de usuario</label>
+            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
+
+            @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            {{-- <input id="name" type="text" name="name" required="required"/> --}}
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Contraseña</label>
             <input id="password" type="password" name="password" required="required"/>
           </div>
           <div class="form-group">
-            <label for="cpassword">Confirm Password</label>
-            <input id="cpassword" type="password" name="cpassword" required="required"/>
+            <label for="password-confirm">Confirmar contraseña</label>
+            <input id="password-confirm" type="password" name="password_confirmation" required="required"/>
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
+            <label for="email">Email</label>
             <input id="email" type="email" name="email" required="required"/>
           </div>
           <div class="form-group">
-            <button type="submit">Register</button>
+            <button type="submit">Registrarme</button>
           </div>
         </form>
       </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\PistaController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\LoginController;
@@ -22,7 +23,7 @@ Route::get('reservas', [ReservaController::class, 'index'])->name('reservas.inde
 
 
 ////////////////////////////PÁGINA CREATE, DENTRO DE PÁGINA RESERVAS////////////////////////////
-Route::get('reservas/create', [ReservaController::class, 'create'])->name('reservas.create');
+Route::get('pistas', [PistaController::class, 'index'])->name('pistas');
 
 
 //////////////////PÁGINA STORE, PARA ALMACENAR EN LA BD//////////////
@@ -44,6 +45,7 @@ Route::get('contactanos', function () {
 
 
 Route::post('reservas/checkUser', [ReservaController::class, 'checkUser']);
+Route::get('gallery', [ReservaController::class, 'gallery'])->name('gallery');
 
 
 // Route::post('index', [ReservaController::class, 'index'])->name('reservas.index');

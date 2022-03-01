@@ -35,7 +35,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto" style="display: flex; justify-content:center; gap: 8vw; list-style: none; font-size: 2em;  margin-top: 3vh;">
+                    <ul class="navbar-nav ms-auto" style="display: flex; justify-content:center; gap: 8vw; list-style: none; font-size: 2em; margin-bottom: -1em; margin-top: 2.3vh;">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -46,7 +46,7 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" style="text-decoration: none; background-color: #4285f4; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); padding: 0.7vw; border-radius: 2vh;" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" style="text-decoration: none; background-color: #4285f4; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4); padding: 0.7vw; border-radius: 2vh;" href="{{ route('register') }}">{{ __('Registrarme') }}</a>
                                 </li>
                             @endif
                         @else

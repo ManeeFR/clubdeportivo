@@ -19,16 +19,15 @@ class ReservaController extends Controller
         return view('reservas.index', compact('reservas'));
     }
 
-    // public function tiempo()
-    // {
-    //     return view('reservas.index');
-    //     // AQUI DEVOLVER PAGINA DEL TIEMPO EN UTRERA
-    // }
+    public function gallery()
+    {
+        return view('gallery');
+    }
 
     public function create()
     {
         $pistas = Pista::all();
-        return view('reservas.create', compact('pistas'));
+        return view('pistas', compact('pistas'));
     }
 
     public function welcome(Request $request) {
@@ -43,11 +42,7 @@ class ReservaController extends Controller
                 // AQUI FALTARÍA QUE CUANDO SE HAYA EQUIVOCADO AL ESCRIBIR LA CLAVE O EL EMAIL QUE SE MUESTRE UN MENSAJE AL CLIENTE
 
             } else {
-                // $_SESSION['email'] = $request->email;
-                // session(['email' => $request->email]);
                 $_SESSION['email'] = $request->email;
-                // $request->session()->put(['email'=>$request->email]);
-                // session(['user' => $request->email]);
                 return view('welcome');
             }
 
@@ -77,20 +72,13 @@ class ReservaController extends Controller
                 }
             }
         }
-        // echo (json_encode($franjas));
-
-
 
         return view('pistas.show', compact('pista', 'franjas', 'reservadas', 'dias'));
     }
 
     // Encargado de almacenar en la BD
-    // Mediante request recuperamos todos los datos introducidos en el formulario.
     public function store(Request $request, $id_pista)
     {
-
-        // $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
-        // ->where('dia', '=', $request->dia)->where('mes', '=', $request->mes)->get();
 
         $consulta = Reserva::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)
         ->where('fecha', '=', $request->fecha)->get();
@@ -98,7 +86,6 @@ class ReservaController extends Controller
         if (count($consulta) == 0) {
             $reserva = new Reserva();
             $reserva->email_user = $_SESSION['email'];
-            // $reserva->email_user = $request->session()->get(['email']);
             $reserva->id_pista = $id_pista;
             $reserva->franja = $request->franja;
             $reserva->fecha = $request->fecha;
@@ -122,21 +109,10 @@ class ReservaController extends Controller
 
         if (count($usuario) == 0) {
 
-            // El usuario no existe en la BD
-
-            // return view('index');
-            // $pistas = Pista::all();
-            // return view('reservas.create', compact('pistas'));
-
         } else {
 
             return redirect()->route('home');
-            // return view('home');
-            // return redirect()->route('index');
 
-            // return view('create.reservas');
-            // $pistas = Pista::all();
-            // return view('reservas.create', compact('pistas'));
         }
 
     }

@@ -44,12 +44,15 @@
 @endfor
 <div style="margin: 6vh 2vh;">
 
-    <a style="background-color: #4285f4; border-radius: 10px; padding: 1vw;" href="{{route('reservas.create')}}">Volver a pistas</a>
+    <a style="background-color: #4285f4; border-radius: 10px; padding: 1vw;" href="{{route('pistas')}}">Volver a pistas</a>
 </div>
 
 
 
 </div>
+<footer style="position: absolute; bottom: 0; left: 35%;">
+    <span><small style="color: black;"> Realizado por Manuel y Javier, alumnado del IES Ruiz Gijón</small></span>
+</footer>
 
 
 @endsection

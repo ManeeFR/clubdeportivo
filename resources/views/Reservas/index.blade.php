@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>Bienvenido a la página principal de reservas</h1>
-<a href="{{route('reservas.create')}}">Reservar</a>
+<a href="{{route('pistas')}}">Reservar</a>
 <ul>
     @foreach ($reservas as $reserva)
         <li>
