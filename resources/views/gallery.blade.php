@@ -122,7 +122,11 @@
 }
 </style>
 {{-- position: absolute; left:40vw; top:6vh; font-size: 1.8em; --}}
-<h1 style="display: flex; justify-content: center; padding: 40px; font-size: 40px" >Fotos del último torneo</h1>
+<div style="display: flex; justify-content: flex-end; gap: 26vw;">
+  <h1 style="display: flex; justify-content: center; padding: 40px; font-size: 40px" >Fotos del último torneo</h1>
+  <img src="{{asset('/img/post/logopadel.png')}}" alt="" style="height: 250px; align-self: flex-end;">
+
+</div>
 <div class="carousel">
     <div class="wrap">
       <ul>

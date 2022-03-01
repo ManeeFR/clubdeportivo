@@ -4,12 +4,18 @@
 
 @section('content')
 
-<div style="margin-left: 15vw; margin-top: 5vh;">
+<div style="margin-left: 15vw; margin-top: 1vh;">
+
+    <div style="display: flex; justify-content: space-between; height: 250px; ">
+        <div style="margin-top: 3vh; ">
+            <h1 style="font-size: 50px">PISTA {{$pista->id}} </h1>
+            <p style="font-size: 30px"><strong>Categoría: </strong>{{$pista->categoria}}</p><br><br>
+        </div>
+        
+<img src="{{asset('/img/post/logopadel.png')}}" alt="">
+    </div>
 
 
-<h1>PISTA {{$pista->id}} </h1>
-
-<p><strong>Categoría: </strong>{{$pista->categoria}}</p><br><br>
 
 @for ($k = 0; $k < 3; $k++)
 
@@ -19,7 +25,7 @@
 
     <label>
 
-        <table class="p-4 flex">
+        <table style="margin-top: -1.2em; padding-top: -1.2em;" class="p-4 flex">
 
             <tr><th>Día {{$dias[$k]}}</th></tr>
             <input type="hidden" name="fecha" value={{date("Y/m/d", strtotime("+". $k ." days"))}} required>
