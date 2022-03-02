@@ -558,7 +558,7 @@ span {
 
         <div class="imagen__scroll">
             <div>
-                <h1>PIDE UNA CITA</h1>
+                <h1>PARTICIPA EN NUESTRO TORNEO</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia optio nemo aliquam impedit culpa id ad, quaerat quo quisquam quod mollitia? Dignissimos fugit quasi, pariatur excepturi autem numquam aperiam animi?</p>
                 <a href="#">LEER MÁS</a>
             </div>
