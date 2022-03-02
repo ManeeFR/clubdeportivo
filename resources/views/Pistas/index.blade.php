@@ -15,7 +15,7 @@
     }
 </style>
 
-<h1 style="display: flex; justify-content:center; font-size: 1.5em; margin-top: 4vh;">¡Escoge la pista que más te guste!</h1>
+<h1 style="display: flex; justify-content:center; font-size: 2em; margin-top: 4vh;">¡Escoge la pista que más te guste!</h1>
 
     <div style="margin:0px auto; text-align:center; max-width:70%; display:flex; justify-content: center;
                 align-item:center; margin-top:15vh; flex-wrap:wrap; gap:2vw; flex-direction:row;">

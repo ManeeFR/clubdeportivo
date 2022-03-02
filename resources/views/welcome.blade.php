@@ -15,7 +15,7 @@
   src: url("{{ asset('fonts/Lato-Regular.ttf') }}");
 }
 * {
-  
+
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -428,9 +428,9 @@ span {
     </div>
 
     <main class="main">
-        <h3>bienvenidos/as a nuestro sitio web</>
-        <h2>SITIO WEB</h2>
-        <p>Te sentiras como nuevo con nuestros masajistas profesionales</p>
+        <h3>Bienvenidos/as a nuestro sitio web</>
+        <h2>CLUB DE PÁDEL</h2>
+        <p>Disponemos de los mejores entrenadores del sector</p>
 
 
         <section class="main__cards">
@@ -577,7 +577,7 @@ span {
             <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias modi ex itaque quasi minima maxime deserunt ullam qui quis earum. Obcaecati nisi rerum iure sint facilis eum, magnam quisquam officia!</p>
         </div>
 
-        
+
 
         <div class="footer__contacto">
             <h2 style="color: black;">CONTACTO</h2>

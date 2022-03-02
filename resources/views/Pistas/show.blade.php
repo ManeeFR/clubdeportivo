@@ -4,14 +4,14 @@
 
 @section('content')
 
-<div style="margin-left: 15vw; margin-top: 1vh;">
+<div style="margin-left: 15vw; margin-top: -0.5vh;">
 
     <div style="display: flex; justify-content: space-between; height: 250px; ">
         <div style="margin-top: 3vh; ">
             <h1 style="font-size: 50px">PISTA {{$pista->id}} </h1>
             <p style="font-size: 30px"><strong>Categoría: </strong>{{$pista->categoria}}</p><br><br>
         </div>
-        
+
 <img src="{{asset('/img/post/logopadel.png')}}" alt="">
     </div>
 
