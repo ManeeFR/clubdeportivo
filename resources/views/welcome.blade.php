@@ -537,8 +537,8 @@ span {
                             <form action="{{route('update', $articulo->id)}}" method="POST" style="font-size: 19em;">
                                 @csrf
                                 @method('put')
-                                <input type="number" name="price" placeholder={{$articulo->precio}}>
-                                <input type="submit" value="Modificar" style="color: black; margin-top: 1vh; pointer:true;">
+                                <input type="number" name="price" style="color: #141616" placeholder={{$articulo->precio}}>
+                                <input type="submit" value="Modificar" style="padding: 1vw; cursor: pointer; color: black; margin-top: 1vh; pointer:true;">
 
                             </form>
                         </div>
