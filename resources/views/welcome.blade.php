@@ -521,38 +521,50 @@ span {
             <h1>PRODUCTOS</h1>
 
             <div class="productos__cont">
-                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
-                    <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/productos_01.jpg')}}" alt="">
-                    </div>
-                    <h4>Producto 1</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
-                    <h4>30€</h4>
-                </div>
-                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
-                    <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/productos_02.jpg')}}" alt="">
-                    </div>
-                    <h4>Producto 2</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
-                    <h4>40€</h4>
-                </div>
-                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
-                    <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/productos_03.jpg')}}" alt="">
-                    </div>
-                    <h4>Producto 3</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
-                    <h4>50€</h4>
-                </div>
-                <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
-                    <div class="productos__cont__card__foto">
-                        <img src="{{asset('img/post/productos_04.jpg')}}" alt="">
-                    </div>
-                    <h4>Producto 4</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
-                    <h4>55€</h4>
-                </div>
+
+                @if (isset($articulos) && count($articulos) > 0)
+
+                    @foreach ($articulos as $articulo)
+
+                        <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
+                            <div class="productos__cont__card__foto">
+                                <img src="{{asset('img/post/'.$articulo->imagen)}}" alt="">
+                            </div>
+                            <h4>{{$articulo->nombre}}</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
+                            <a style="color: red; font-size: 19em;" href="{{route('delete', $articulo->id)}}">ELIMINAR</a>
+                            <h4>{{$articulo->precio}} €</h4>
+                            <form action="{{route('update', $articulo->id)}}" method="POST" style="font-size: 19em;">
+                                @csrf
+                                @method('put')
+                                <input type="number" name="price" placeholder={{$articulo->precio}}>
+                                <input type="submit" value="Modificar" style="color: black; margin-top: 1vh; pointer:true;">
+
+                            </form>
+                        </div>
+
+                    @endforeach
+
+                @else
+
+                    @for ($i = 0; $i < 4; $i++)
+
+                        <div data-aos="flip-left" data-aos-delay="200" data-aos-duration="1000" class="productos__cont__card">
+                            <div class="productos__cont__card__foto">
+                                <img src="{{asset('img/post/nodisponible01.jpg')}}" alt="">
+                            </div>
+                            <h4>No disponible</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate voluptatibus.</p>
+                            {{-- <a style="color: gray; font-size: 19em;" href="" role="link" aria-disabled="true">ELIMINAR</a> --}}
+                            <h4>0 €</h4>
+                        </div>
+
+                    @endfor
+
+
+                @endif
+
+
             </div>
         </section>
 
@@ -562,12 +574,7 @@ span {
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia optio nemo aliquam impedit culpa id ad, quaerat quo quisquam quod mollitia? Dignissimos fugit quasi, pariatur excepturi autem numquam aperiam animi?</p>
                 <a href="#">LEER MÁS</a>
             </div>
-
-
         </div>
-
-
-
 
     </main>
 
@@ -576,8 +583,6 @@ span {
             <h2 style="color: black;">NOSOTROS</h2>
             <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias modi ex itaque quasi minima maxime deserunt ullam qui quis earum. Obcaecati nisi rerum iure sint facilis eum, magnam quisquam officia!</p>
         </div>
-
-
 
         <div class="footer__contacto">
             <h2 style="color: black;">CONTACTO</h2>
@@ -593,10 +598,7 @@ span {
     </footer>
     <span><small style="color: black;"> Realizado por Manuel y Javier, alumnado del IES Ruiz Gijón</small></span>
 
-
 </body>
 </html>
-
-
 
 @endsection

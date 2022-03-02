@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Pista;
+use App\Models\Articulo;
 
 session_start();
 
@@ -38,24 +39,26 @@ class PistaController extends Controller
         } else if (isset($_SESSION['email']) && isset($_SESSION['password']) && !isset($request->email) && !isset($request->password)) {
 
             $usuario = User::where('email', '=', $_SESSION['email'])->where('password', '=', $_SESSION['password'])->get();
+            $articulos = Articulo::all();
 
             if (count($usuario) == 0) { return redirect()->route('login');
 
-            } else { return view('welcome'); }
+            } else { return view('welcome', compact('articulos')); }
 
         } else if (isset($request->email) && isset($request->password)) {
 
             $usuario = User::where('email', '=', $request->email)->where('password', '=', $request->password)->get();
+            $articulos = Articulo::all();
 
             if (count($usuario) == 0) {
 
                 return redirect()->route('login');
-                
+
 
             } else {
                 $_SESSION['email'] = $request->email;
                 $_SESSION['password'] = $request->password;
-                return view('welcome');
+                return view('welcome', compact('articulos'));
             }
 
         } else { return redirect()->route('login'); }
@@ -65,6 +68,29 @@ class PistaController extends Controller
     public function gallery() {
         if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
             return view('gallery');
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function delete($id) {
+        if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+            $articulo = Articulo::find($id);
+            $articulo->delete();
+            $articulos = Articulo::all();
+            return view('welcome', compact('articulos'));
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+    public function update(Request $request, $id) {
+        if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+            $articulo = Articulo::find($id);
+            $articulo->precio = $request->price;
+            $articulo->save();
+            $articulos = Articulo::all();
+            return view('welcome', compact('articulos'));
         } else {
             return redirect()->route('login');
         }

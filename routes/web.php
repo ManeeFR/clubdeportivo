@@ -22,6 +22,8 @@ Route::controller(PistaController::class)->group(function() {
 
     Route::get('pistas', 'index')->name('pistas');
     Route::get('gallery', 'gallery')->name('gallery');
+    Route::get('delete/{id}', 'delete')->name('delete');
+    Route::put('update/{id}', 'update')->name('update');
 });
 
 
